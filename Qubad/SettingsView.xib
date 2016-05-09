@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsView" customModule="Qubad" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="1rk-hf-uDu" id="7ar-AA-fca"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IlC-JB-agB">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rk-hf-uDu">
+                            <rect key="frame" x="0.0" y="0.0" width="250" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Mrn-tT-WJa"/>
+                                <constraint firstAttribute="height" constant="45" id="Uoe-bP-AnP"/>
+                                <constraint firstAttribute="width" constant="250" id="wnh-JG-cKe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logout" translatesAutoresizingMaskIntoConstraints="NO" id="4zq-RP-lCQ">
+                            <rect key="frame" x="8" y="53" width="35" height="35"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky3-SW-zPA">
+                            <rect key="frame" x="8" y="53" width="234" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="bJU-QP-JdC"/>
+                            </constraints>
+                            <state key="normal" title="Logout"/>
+                            <connections>
+                                <action selector="logoutButton:" destination="-1" eventType="touchUpInside" id="qay-X1-v4K"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Ky3-SW-zPA" secondAttribute="trailing" constant="8" id="6cY-bH-cwR"/>
+                        <constraint firstAttribute="height" constant="400" id="Cju-eb-FWi"/>
+                        <constraint firstAttribute="trailing" secondItem="1rk-hf-uDu" secondAttribute="trailing" id="bae-RG-EXl"/>
+                        <constraint firstItem="1rk-hf-uDu" firstAttribute="leading" secondItem="IlC-JB-agB" secondAttribute="leading" id="gU6-vu-dy4"/>
+                        <constraint firstItem="Ky3-SW-zPA" firstAttribute="top" secondItem="1rk-hf-uDu" secondAttribute="bottom" constant="8" id="hrq-Fh-gHR"/>
+                        <constraint firstItem="1rk-hf-uDu" firstAttribute="top" secondItem="IlC-JB-agB" secondAttribute="top" id="jZB-ff-kov"/>
+                        <constraint firstAttribute="width" constant="250" id="jtr-kL-dwz"/>
+                        <constraint firstItem="Ky3-SW-zPA" firstAttribute="leading" secondItem="IlC-JB-agB" secondAttribute="leading" constant="8" id="zba-mN-xvp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IlC-JB-agB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4pT-M8-VeG"/>
+                <constraint firstAttribute="trailing" secondItem="IlC-JB-agB" secondAttribute="trailing" id="A3E-qb-2sg"/>
+                <constraint firstItem="IlC-JB-agB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cv1-d0-s0H"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="169" y="374"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logout" width="100" height="100"/>
+    </resources>
+</document>

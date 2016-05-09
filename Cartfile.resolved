@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" "3.3.1"
+github "ReactiveX/RxSwift" "2.4"
+github "soffes/SSKeychain" "v1.4.0"
+github "SwiftyJSON/SwiftyJSON" "2.3.3"
+github "realm/realm-cocoa" "v0.101.0"
+github "Alamofire/AlamofireImage" "2.4.0"
