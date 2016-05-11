@@ -118,14 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				CF583B391CD0FD9B00913453 /* AppDelegate.swift */,
-				CFB0BD4B1CE0AB5B00897E5E /* SettingsView.swift */,
-				CFB0BD4D1CE0AB6C00897E5E /* SettingsView.xib */,
-				CF5104061CE01D09004359A8 /* ProfileViewController.swift */,
-				CF5104071CE01D09004359A8 /* ProfileViewController.xib */,
-				CF51040A1CE06C8D004359A8 /* WebViewController.swift */,
-				CF51040B1CE06C8D004359A8 /* WebViewController.xib */,
-				CF255FB31CD77B420092927C /* UserInfo.swift */,
 				CF583B3B1CD0FD9B00913453 /* LoginViewController.swift */,
+				CF5104061CE01D09004359A8 /* ProfileViewController.swift */,
+				CF51040A1CE06C8D004359A8 /* WebViewController.swift */,
+				CFB0BD4B1CE0AB5B00897E5E /* SettingsView.swift */,
+				CF255FB31CD77B420092927C /* UserInfo.swift */,
+				CFB0BD4D1CE0AB6C00897E5E /* SettingsView.xib */,
+				CF5104071CE01D09004359A8 /* ProfileViewController.xib */,
+				CF51040B1CE06C8D004359A8 /* WebViewController.xib */,
 				CF583B3D1CD0FD9B00913453 /* Main.storyboard */,
 				CF583B401CD0FD9B00913453 /* Assets.xcassets */,
 				CF583B421CD0FD9B00913453 /* LaunchScreen.storyboard */,
@@ -146,6 +146,7 @@
 				CF583B341CD0FD9B00913453 /* Resources */,
 				CF2587201CD105320084AF7A /* ShellScript */,
 				CF731B3B1CDEC51B00702F0A /* Embed Frameworks */,
+				CF9E9CB11CE2FFC100BA3333 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -226,6 +227,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		CF9E9CB11CE2FFC100BA3333 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

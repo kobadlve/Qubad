@@ -11,25 +11,23 @@ import SSKeychain
 import RealmSwift
 
 class LoginViewController: UIViewController, NSURLSessionDelegate, NSURLSessionDataDelegate {
-    
-    enum keyChain: String {
-        case service = "qiita"
-        case account = "user"
-        case passwd = "passwd"
+
+    enum KeyChain: String {
+        case Service = "qiita"
+        case Account = "user"
+        case Passwd = "passwd"
     }
     
-    enum api: String {
-        case url = "https://qiita.com/api/v1/auth"
+    enum Api: String {
+        case URL = "https://qiita.com/api/v1/auth"
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.initPasswd()
         self.lookQuery()
-        // Do anyadditional setup after loading the view, typically from a nib.
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         if lookQuery() == false {
         let loginAlert = UIAlertController(title: "Login", message: "", preferredStyle: .Alert)
@@ -64,46 +62,58 @@ class LoginViewController: UIViewController, NSURLSessionDelegate, NSURLSessionD
     func initPasswd() {
         
         let query = SSKeychainQuery()
-        query.service = keyChain.service.rawValue
-        query.account = keyChain.account.rawValue
-        query.password = keyChain.passwd.rawValue
+        query.service = KeyChain.Service.rawValue
+        query.account = KeyChain.Account.rawValue
+        query.password = KeyChain.Passwd.rawValue
         
         let dictionary: [String: NSObject] = [
             "passwd": "default"
         ]
         query.passwordObject = dictionary
-        try! query.save()
+        do {
+            try query.save()
+        } catch {
+            print("Save Error")
+        }
     }
     
     func setPasswd(passwd: String) {
         
         let query = SSKeychainQuery()
-        query.service = keyChain.service.rawValue
-        query.account = keyChain.account.rawValue
-        query.password = keyChain.passwd.rawValue
+        query.service = KeyChain.Service.rawValue
+        query.account = KeyChain.Account.rawValue
+        query.password = KeyChain.Passwd.rawValue
         
         let dictionary: [String: NSObject] = [
             "passwd": passwd
         ]
         query.passwordObject = dictionary
-        try! query.save()
+        query.passwordObject = dictionary
+        do {
+            try query.save()
+        } catch {
+            print("Save Error")
+        }
     }
     
     func lookQuery() -> Bool {
         
         let lookupQuery = SSKeychainQuery()
-        lookupQuery.service = keyChain.service.rawValue
-        lookupQuery.account = keyChain.account.rawValue
+        lookupQuery.service = KeyChain.Service.rawValue
+        lookupQuery.account = KeyChain.Account.rawValue
         do {
             try lookupQuery.fetch()
         } catch {
             return false
         }
         
-        let readDictionary = lookupQuery.passwordObject as! [String: NSObject]
-        print(readDictionary["passwd"])
-        if readDictionary["passwd"] == "default" {
-            return false
+        if let readDictionary = lookupQuery.passwordObject as? [String: NSObject] {
+            print(readDictionary["passwd"])
+            if readDictionary["passwd"] == "default" {
+                return false
+            } else {
+                return true
+            }
         } else {
             return true
         }
@@ -117,7 +127,7 @@ class LoginViewController: UIViewController, NSURLSessionDelegate, NSURLSessionD
         let username = textFeild[0].text
         let passwd = textFeild[1].text
         
-        let url = NSURL(string: api.url.rawValue)
+        let url = NSURL(string: Api.URL.rawValue)
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -133,7 +143,7 @@ class LoginViewController: UIViewController, NSURLSessionDelegate, NSURLSessionD
             if let res = response as? NSHTTPURLResponse {
                 print("HttpReponse -> \(res.statusCode)")
                 if res.statusCode == 200 {
-                    if (error == nil) {
+                    if error == nil {
                         do {
                             if let result = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? NSDictionary {
                                 self.setPasswd((result["token"] as? String)!)

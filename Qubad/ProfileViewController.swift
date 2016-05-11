@@ -15,22 +15,22 @@ import RealmSwift
 import Realm
 
 
-class ProfileViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    enum keyChain: String {
-        case service = "qiita"
-        case account = "user"
-        case passwd = "passwd"
+    enum KeyChain: String {
+        case Service = "qiita"
+        case Account = "user"
+        case Passwd = "passwd"
     }
     
     internal enum Method: String {
         case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
     }
     
-    enum api: String {
-        case url = "https://qiita.com/api/v1/stocks"
-        case user = "https://qiita.com/api/v1/user"
-        case stocks = "https://qiita.com/api/v1/users/"
+    enum Api: String {
+        case URL = "https://qiita.com/api/v1/stocks"
+        case User = "https://qiita.com/api/v1/user"
+        case Stocks = "https://qiita.com/api/v1/users/"
     }
     
     @IBOutlet weak var profileImageView: UIImageView!
@@ -75,21 +75,26 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
         itemsLabel.layer.masksToBounds = true
         segmentIndex = 0
         getUserInfo()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - TableView Delegate, DataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if segmentIndex == 1 { return stockArticles.count }
-        else { return articles.count }
+        if segmentIndex == 1 {
+            return stockArticles.count
+        } else {
+            return articles.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
         var article: [String: AnyObject?]
-        if segmentIndex == 1 { article = stockArticles[indexPath.row] }
-        else { article = articles[indexPath.row] }
+        if segmentIndex == 1 {
+            article = stockArticles[indexPath.row]
+        } else {
+            article = articles[indexPath.row]
+        }
         cell.textLabel?.text = article["title"] as? String
         let count = article["stock_count"] as? Int
         cell.detailTextLabel?.text = (count?.description)! + " Stocks"
@@ -99,8 +104,11 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let loadingView = WebViewController(nibName: "WebViewController", bundle: nil)
         var article: [String: AnyObject?]
-        if segmentIndex == 1 { article = stockArticles[indexPath.row] }
-        else { article = articles[indexPath.row] }
+        if segmentIndex == 1 {
+            article = stockArticles[indexPath.row]
+        } else {
+            article = articles[indexPath.row]
+        }
         print(article["url"])
         loadingView.articleTitle = article["title"] as? String
         loadingView.articleURL =  article["url"] as? String
@@ -121,8 +129,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
         if let view = view.subviews.last as? SettingsView {
             view.removeFromSuperview()
         } else {
-            let settingView = SettingsView(frame: CGRectMake(100, 50, 250, 400))
-            settingView.backgroundColor = UIColor.clearColor()
+            let settingView = SettingsView(frame: CGRect(x: 100, y: 50, width: 250, height: 400))
             settingView.profileView = self
             self.view.addSubview(settingView)
         }
@@ -143,7 +150,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
     func getUserInfo() {
         var realm: Realm!
         let user = UserInfo()
-        Alamofire.request(.GET, api.user.rawValue, parameters: ["token": getToken()])
+        Alamofire.request(.GET, Api.User.rawValue, parameters: ["token": getToken()!])
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
@@ -189,7 +196,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
             print("getStock error")
         }
         let name = user.url_name
-        let url = api.stocks.rawValue + name + "/items"
+        let url = Api.Stocks.rawValue + name + "/items"
         Alamofire.request(.GET, url)
             .responseJSON { response in
                 guard let object = response.result.value else {
@@ -222,15 +229,23 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
         }
     }
     
-    func getToken() -> NSObject {
+    func getToken() -> NSObject? {
         
         let lookupQuery = SSKeychainQuery()
-        lookupQuery.service = keyChain.service.rawValue
-        lookupQuery.account = keyChain.account.rawValue
-        try! lookupQuery.fetch()
-        
-        let readDictionary = lookupQuery.passwordObject as! [String: NSObject]
-        return readDictionary["passwd"]!
+        lookupQuery.service = KeyChain.Service.rawValue
+        lookupQuery.account = KeyChain.Account.rawValue
+        do {
+            try lookupQuery.fetch()
+            
+            if let readDictionary = lookupQuery.passwordObject as? [String: NSObject] {
+            return readDictionary["passwd"]
+            } else {
+                return nil
+            }
+        } catch {
+            print("Get Token error")
+            return nil
+        }
     }
     
     // MARK: - Get Articles
@@ -255,7 +270,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func getStockedArticles() {
-        Alamofire.request(.GET, api.url.rawValue, parameters: ["token": getToken()])
+        Alamofire.request(.GET, Api.URL.rawValue, parameters: ["token": getToken()!])
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return

@@ -1,0 +1,14 @@
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - file_length
+excluded:
+  - Carthage
+  - Qubad/UserInfo.swift
+  - Qubad/AppDelegate.swift  
+type_body_length:
+  - 300 # warning
+  - 400 # error
+function_body_length:
+  - 100 # warning
+

@@ -11,10 +11,10 @@ import SSKeychain
 
 class SettingsView: UIView {
     
-    enum keyChain: String {
-        case service = "qiita"
-        case account = "user"
-        case passwd = "passwd"
+    enum KeyChain: String {
+        case Service = "qiita"
+        case Account = "user"
+        case Passwd = "passwd"
     }
     
     var profileView: ProfileViewController!
@@ -26,7 +26,7 @@ class SettingsView: UIView {
         let alertController = UIAlertController(title: "Logout OK?", message: "", preferredStyle: .Alert)
         
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: { Void in
-            SSKeychain.deletePasswordForService(keyChain.service.rawValue, account: keyChain.account.rawValue)
+            SSKeychain.deletePasswordForService(KeyChain.Service.rawValue, account: KeyChain.Account.rawValue)
             self.profileView.dismissViewControllerAnimated(true, completion: nil)
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -51,7 +51,7 @@ class SettingsView: UIView {
     private func comminInit() {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "SettingsView", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil).first as! UIView
+        if let view = nib.instantiateWithOwner(self, options: nil).first as? UIView {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         let bindings = ["view": view]
@@ -63,6 +63,7 @@ class SettingsView: UIView {
             options:NSLayoutFormatOptions(rawValue: 0),
             metrics:nil,
             views: bindings))
+        }
     }
     
     /*

@@ -26,15 +26,16 @@ class WebViewController: UIViewController {
         let url = NSURL(string: articleURL)
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
-        // Do any additional setup after loading the view.
+        
+        // Set Swipe Gesture
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(WebViewController.dismissView))
+        gesture.direction = UISwipeGestureRecognizerDirection.Right
+        self.webView.addGestureRecognizer(gesture)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func dismissView() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    
-
     /*
     // MARK: - Navigation
 
