@@ -21,6 +21,7 @@ class ArticlesViewController: UIViewController, UISearchBarDelegate, UITableView
         super.viewDidLoad()
         titleSearchBar.delegate = self
         titleSearchBar.placeholder = "Title"
+        titleSearchBar.showsCancelButton = true
         articleTableView.delegate = self
         articleTableView.dataSource = self
         
@@ -29,12 +30,9 @@ class ArticlesViewController: UIViewController, UISearchBarDelegate, UITableView
     
     // MARK: - SearchBar Delegaete
     
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        
-    }
-    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-            searchTitleArticles(searchBar.text!)
+        searchTitleArticles(searchBar.text!)
+        searchBar.resignFirstResponder()
     }
     
     // MARK: - TableView Delegate, DataSource
