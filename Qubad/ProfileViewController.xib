@@ -204,15 +204,15 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LVv-wO-yEb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="413-Fm-FJH"/>
-                <constraint firstAttribute="bottom" secondItem="fAv-1C-zcd" secondAttribute="bottom" constant="8" id="4nt-j3-S9z"/>
+                <constraint firstAttribute="trailing" secondItem="fAv-1C-zcd" secondAttribute="trailing" constant="8" id="Bkj-Uq-ucf"/>
+                <constraint firstItem="fAv-1C-zcd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Cta-Go-nVT"/>
                 <constraint firstItem="Oed-nI-ZKX" firstAttribute="top" secondItem="LVv-wO-yEb" secondAttribute="bottom" constant="26" id="ELe-Pc-YKT"/>
-                <constraint firstItem="fAv-1C-zcd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Mmh-nb-lsK"/>
-                <constraint firstItem="fAv-1C-zcd" firstAttribute="top" secondItem="2dA-Sz-vMy" secondAttribute="bottom" constant="8" id="RRr-fA-EUn"/>
+                <constraint firstItem="fAv-1C-zcd" firstAttribute="top" secondItem="2dA-Sz-vMy" secondAttribute="bottom" constant="8" id="QES-Jz-GhW"/>
                 <constraint firstAttribute="trailing" secondItem="Oed-nI-ZKX" secondAttribute="trailing" constant="8" id="S8R-Ug-wBC"/>
                 <constraint firstItem="vLE-c7-Fqh" firstAttribute="top" secondItem="LVv-wO-yEb" secondAttribute="bottom" constant="26" id="UZF-SN-1kH"/>
-                <constraint firstAttribute="trailing" secondItem="fAv-1C-zcd" secondAttribute="trailing" constant="8" id="V6S-8a-92i"/>
                 <constraint firstItem="vLE-c7-Fqh" firstAttribute="leading" secondItem="vr2-6b-ryn" secondAttribute="trailing" constant="8" id="Vo1-v8-nkB"/>
                 <constraint firstItem="Oed-nI-ZKX" firstAttribute="leading" secondItem="vLE-c7-Fqh" secondAttribute="trailing" constant="8" id="W32-hf-pBJ"/>
+                <constraint firstAttribute="bottom" secondItem="fAv-1C-zcd" secondAttribute="bottom" constant="52" id="by6-7c-UqT"/>
                 <constraint firstItem="LVv-wO-yEb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d2B-El-SZJ"/>
                 <constraint firstItem="P2b-C0-ACG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="e53-Pw-iw0"/>
                 <constraint firstItem="vr2-6b-ryn" firstAttribute="top" secondItem="LVv-wO-yEb" secondAttribute="bottom" constant="26" id="gbp-ee-BJK"/>
@@ -220,7 +220,6 @@
                 <constraint firstItem="P2b-C0-ACG" firstAttribute="top" secondItem="LVv-wO-yEb" secondAttribute="bottom" constant="11" id="iJJ-bA-6Uy"/>
                 <constraint firstAttribute="trailing" secondItem="2dA-Sz-vMy" secondAttribute="trailing" constant="8" id="maO-Xb-Zeu"/>
                 <constraint firstItem="2dA-Sz-vMy" firstAttribute="top" secondItem="P2b-C0-ACG" secondAttribute="bottom" constant="8" id="qor-z6-K4P"/>
-                <constraint firstItem="fAv-1C-zcd" firstAttribute="top" secondItem="2dA-Sz-vMy" secondAttribute="bottom" constant="8" id="uY5-yi-6Uv"/>
                 <constraint firstItem="2dA-Sz-vMy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="y4t-qH-W6Q"/>
             </constraints>
             <variation key="default">
@@ -237,22 +236,21 @@
                     <exclude reference="413-Fm-FJH"/>
                     <exclude reference="d2B-El-SZJ"/>
                     <exclude reference="h1G-KS-FQd"/>
+                    <exclude reference="e53-Pw-iw0"/>
+                    <exclude reference="iJJ-bA-6Uy"/>
                     <exclude reference="maO-Xb-Zeu"/>
                     <exclude reference="qor-z6-K4P"/>
                     <exclude reference="y4t-qH-W6Q"/>
+                    <exclude reference="gbp-ee-BJK"/>
+                    <exclude reference="Bkj-Uq-ucf"/>
+                    <exclude reference="Cta-Go-nVT"/>
+                    <exclude reference="QES-Jz-GhW"/>
+                    <exclude reference="by6-7c-UqT"/>
+                    <exclude reference="UZF-SN-1kH"/>
+                    <exclude reference="Vo1-v8-nkB"/>
                     <exclude reference="ELe-Pc-YKT"/>
                     <exclude reference="S8R-Ug-wBC"/>
                     <exclude reference="W32-hf-pBJ"/>
-                    <exclude reference="e53-Pw-iw0"/>
-                    <exclude reference="iJJ-bA-6Uy"/>
-                    <exclude reference="4nt-j3-S9z"/>
-                    <exclude reference="Mmh-nb-lsK"/>
-                    <exclude reference="RRr-fA-EUn"/>
-                    <exclude reference="V6S-8a-92i"/>
-                    <exclude reference="uY5-yi-6Uv"/>
-                    <exclude reference="UZF-SN-1kH"/>
-                    <exclude reference="Vo1-v8-nkB"/>
-                    <exclude reference="gbp-ee-BJK"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -269,25 +267,24 @@
                     <include reference="413-Fm-FJH"/>
                     <include reference="d2B-El-SZJ"/>
                     <include reference="h1G-KS-FQd"/>
+                    <include reference="e53-Pw-iw0"/>
+                    <include reference="iJJ-bA-6Uy"/>
                     <include reference="maO-Xb-Zeu"/>
                     <include reference="qor-z6-K4P"/>
                     <include reference="y4t-qH-W6Q"/>
+                    <include reference="gbp-ee-BJK"/>
+                    <include reference="Bkj-Uq-ucf"/>
+                    <include reference="Cta-Go-nVT"/>
+                    <include reference="QES-Jz-GhW"/>
+                    <include reference="by6-7c-UqT"/>
+                    <include reference="UZF-SN-1kH"/>
+                    <include reference="Vo1-v8-nkB"/>
                     <include reference="ELe-Pc-YKT"/>
                     <include reference="S8R-Ug-wBC"/>
                     <include reference="W32-hf-pBJ"/>
-                    <include reference="e53-Pw-iw0"/>
-                    <include reference="iJJ-bA-6Uy"/>
-                    <include reference="4nt-j3-S9z"/>
-                    <include reference="Mmh-nb-lsK"/>
-                    <include reference="RRr-fA-EUn"/>
-                    <include reference="V6S-8a-92i"/>
-                    <include reference="uY5-yi-6Uv"/>
-                    <include reference="UZF-SN-1kH"/>
-                    <include reference="Vo1-v8-nkB"/>
-                    <include reference="gbp-ee-BJK"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="-175" y="296"/>
+            <point key="canvasLocation" x="-412" y="296"/>
         </view>
     </objects>
     <resources>

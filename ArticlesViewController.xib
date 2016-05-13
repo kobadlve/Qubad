@@ -50,14 +50,14 @@
             <constraints>
                 <constraint firstItem="S1b-s6-y1p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2FB-ed-lND"/>
                 <constraint firstItem="S1b-s6-y1p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7B8-XZ-Q2l"/>
-                <constraint firstItem="RQf-Wm-7qi" firstAttribute="top" secondItem="NRz-CK-vi0" secondAttribute="bottom" id="AZ2-sv-d6C"/>
-                <constraint firstAttribute="trailing" secondItem="RQf-Wm-7qi" secondAttribute="trailing" constant="8" id="Izk-Iq-EiY"/>
                 <constraint firstAttribute="trailing" secondItem="NRz-CK-vi0" secondAttribute="trailing" id="K8f-fC-Rdl"/>
                 <constraint firstItem="NRz-CK-vi0" firstAttribute="top" secondItem="S1b-s6-y1p" secondAttribute="bottom" id="M0f-sU-hvB"/>
-                <constraint firstAttribute="bottom" secondItem="RQf-Wm-7qi" secondAttribute="bottom" constant="8" id="NDj-G5-XhW"/>
                 <constraint firstItem="NRz-CK-vi0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VFm-fv-Je6"/>
                 <constraint firstAttribute="trailing" secondItem="S1b-s6-y1p" secondAttribute="trailing" id="ZB8-hW-aRI"/>
-                <constraint firstItem="RQf-Wm-7qi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="eDX-yh-tNY"/>
+                <constraint firstItem="RQf-Wm-7qi" firstAttribute="top" secondItem="NRz-CK-vi0" secondAttribute="bottom" id="h5T-TP-72l"/>
+                <constraint firstItem="RQf-Wm-7qi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="uvs-A6-JZE"/>
+                <constraint firstAttribute="trailing" secondItem="RQf-Wm-7qi" secondAttribute="trailing" constant="8" id="wzU-ha-OdM"/>
+                <constraint firstAttribute="bottom" secondItem="RQf-Wm-7qi" secondAttribute="bottom" constant="52" id="yuY-cM-V1u"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
@@ -72,10 +72,10 @@
                     <exclude reference="K8f-fC-Rdl"/>
                     <exclude reference="M0f-sU-hvB"/>
                     <exclude reference="VFm-fv-Je6"/>
-                    <exclude reference="AZ2-sv-d6C"/>
-                    <exclude reference="Izk-Iq-EiY"/>
-                    <exclude reference="NDj-G5-XhW"/>
-                    <exclude reference="eDX-yh-tNY"/>
+                    <exclude reference="h5T-TP-72l"/>
+                    <exclude reference="uvs-A6-JZE"/>
+                    <exclude reference="wzU-ha-OdM"/>
+                    <exclude reference="yuY-cM-V1u"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -91,10 +91,10 @@
                     <include reference="K8f-fC-Rdl"/>
                     <include reference="M0f-sU-hvB"/>
                     <include reference="VFm-fv-Je6"/>
-                    <include reference="AZ2-sv-d6C"/>
-                    <include reference="Izk-Iq-EiY"/>
-                    <include reference="NDj-G5-XhW"/>
-                    <include reference="eDX-yh-tNY"/>
+                    <include reference="h5T-TP-72l"/>
+                    <include reference="uvs-A6-JZE"/>
+                    <include reference="wzU-ha-OdM"/>
+                    <include reference="yuY-cM-V1u"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="259" y="472"/>
