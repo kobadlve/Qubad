@@ -21,55 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUr-X5-G3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="-560"/>
-        </scene>
-        <!--Loading View Controller-->
-        <scene sceneID="LC5-3G-oh3">
-            <objects>
-                <viewController storyboardIdentifier="LoadingView" id="qMl-tK-eHb" customClass="LoadingViewController" customModule="Qubad" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="njL-Ro-KkS"/>
-                        <viewControllerLayoutGuide type="bottom" id="cXc-re-vYi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2GE-n0-Z6n">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fW5-eP-rMn">
-                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fW5-eP-rMn" firstAttribute="centerX" secondItem="2GE-n0-Z6n" secondAttribute="centerX" id="VcC-bQ-cgz"/>
-                            <constraint firstItem="fW5-eP-rMn" firstAttribute="centerY" secondItem="2GE-n0-Z6n" secondAttribute="centerY" id="ciJ-BA-GRK"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="fW5-eP-rMn"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="VcC-bQ-cgz"/>
-                                <exclude reference="ciJ-BA-GRK"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="fW5-eP-rMn"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="VcC-bQ-cgz"/>
-                                <include reference="ciJ-BA-GRK"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="loading" destination="fW5-eP-rMn" id="iEJ-OZ-CN6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PDZ-b8-jIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1471.5" y="-560"/>
+            <point key="canvasLocation" x="111" y="-668"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="GuS-V4-4I1">
@@ -84,10 +36,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pIr-5E-HOB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVx-yS-gKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="121"/>
+            <point key="canvasLocation" x="1473" y="-1044"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="Igf-8U-2zg">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTab" id="fIM-Y2-0ck" customClass="MainTabBarController" customModule="Qubad" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="0BN-sd-lPg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykD-Ie-WJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795" y="-668"/>
         </scene>
     </scenes>
 </document>

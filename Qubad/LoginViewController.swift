@@ -51,9 +51,12 @@ class LoginViewController: UIViewController, NSURLSessionDelegate, NSURLSessionD
         loginAlert.addAction(login)
         presentViewController(loginAlert, animated: true, completion: nil)
         } else {
-            let loadingView = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-            loadingView.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
-            self.presentViewController(loadingView, animated: true, completion: nil)
+//            let loadingView = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+//            loadingView.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+//            self.presentViewController(loadingView, animated: true, completion: nil)
+            let loadingView = self.storyboard?.instantiateViewControllerWithIdentifier("MainTab")
+            loadingView!.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+            self.presentViewController(loadingView!, animated: true, completion: nil)
         }
     }
     

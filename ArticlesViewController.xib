@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticlesViewController" customModule="Qubad" customModuleProvider="target">
+            <connections>
+                <outlet property="articleTableView" destination="RQf-Wm-7qi" id="EH0-Tv-3LK"/>
+                <outlet property="searchDisplayController" destination="Z4a-Xn-6rt" id="VzP-tZ-d7B"/>
+                <outlet property="titleSearchBar" destination="NRz-CK-vi0" id="os5-pd-DIc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1b-s6-y1p">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="zdo-T3-wfi"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Articles" id="C05-PV-XGU"/>
+                    </items>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="zdo-T3-wfi"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="zdo-T3-wfi"/>
+                        </mask>
+                    </variation>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RQf-Wm-7qi">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NRz-CK-vi0">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="S1b-s6-y1p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2FB-ed-lND"/>
+                <constraint firstItem="S1b-s6-y1p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7B8-XZ-Q2l"/>
+                <constraint firstItem="RQf-Wm-7qi" firstAttribute="top" secondItem="NRz-CK-vi0" secondAttribute="bottom" id="AZ2-sv-d6C"/>
+                <constraint firstAttribute="trailing" secondItem="RQf-Wm-7qi" secondAttribute="trailing" constant="8" id="Izk-Iq-EiY"/>
+                <constraint firstAttribute="trailing" secondItem="NRz-CK-vi0" secondAttribute="trailing" id="K8f-fC-Rdl"/>
+                <constraint firstItem="NRz-CK-vi0" firstAttribute="top" secondItem="S1b-s6-y1p" secondAttribute="bottom" id="M0f-sU-hvB"/>
+                <constraint firstAttribute="bottom" secondItem="RQf-Wm-7qi" secondAttribute="bottom" constant="8" id="NDj-G5-XhW"/>
+                <constraint firstItem="NRz-CK-vi0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VFm-fv-Je6"/>
+                <constraint firstAttribute="trailing" secondItem="S1b-s6-y1p" secondAttribute="trailing" id="ZB8-hW-aRI"/>
+                <constraint firstItem="RQf-Wm-7qi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="eDX-yh-tNY"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="S1b-s6-y1p"/>
+                    <exclude reference="RQf-Wm-7qi"/>
+                    <exclude reference="NRz-CK-vi0"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="2FB-ed-lND"/>
+                    <exclude reference="7B8-XZ-Q2l"/>
+                    <exclude reference="ZB8-hW-aRI"/>
+                    <exclude reference="K8f-fC-Rdl"/>
+                    <exclude reference="M0f-sU-hvB"/>
+                    <exclude reference="VFm-fv-Je6"/>
+                    <exclude reference="AZ2-sv-d6C"/>
+                    <exclude reference="Izk-Iq-EiY"/>
+                    <exclude reference="NDj-G5-XhW"/>
+                    <exclude reference="eDX-yh-tNY"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="S1b-s6-y1p"/>
+                    <include reference="RQf-Wm-7qi"/>
+                    <include reference="NRz-CK-vi0"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="2FB-ed-lND"/>
+                    <include reference="7B8-XZ-Q2l"/>
+                    <include reference="ZB8-hW-aRI"/>
+                    <include reference="K8f-fC-Rdl"/>
+                    <include reference="M0f-sU-hvB"/>
+                    <include reference="VFm-fv-Je6"/>
+                    <include reference="AZ2-sv-d6C"/>
+                    <include reference="Izk-Iq-EiY"/>
+                    <include reference="NDj-G5-XhW"/>
+                    <include reference="eDX-yh-tNY"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="259" y="472"/>
+        </view>
+        <searchDisplayController id="Z4a-Xn-6rt">
+            <connections>
+                <outlet property="delegate" destination="-1" id="xY8-as-9JX"/>
+                <outlet property="searchContentsController" destination="-1" id="IGw-Jk-fbU"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="ZTR-LY-uVb"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="6Cl-ku-80K"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+</document>

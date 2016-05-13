@@ -17,6 +17,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lM-kl-JHO">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                </webView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNS-nQ-2ef">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <constraints>
@@ -27,6 +31,11 @@
                             <barButtonItem key="leftBarButtonItem" title="&lt;&lt;&lt;" id="weo-fl-YTJ">
                                 <connections>
                                     <action selector="backView:" destination="-1" id="Akh-6y-mCV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" image="stock" id="h2M-3B-snu">
+                                <connections>
+                                    <action selector="stockButton:" destination="-1" id="K7f-f8-7ri"/>
                                 </connections>
                             </barButtonItem>
                         </navigationItem>
@@ -42,10 +51,6 @@
                         </mask>
                     </variation>
                 </navigationBar>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lM-kl-JHO">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -63,8 +68,8 @@
             </constraints>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="cNS-nQ-2ef"/>
                     <exclude reference="8lM-kl-JHO"/>
+                    <exclude reference="cNS-nQ-2ef"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="Ohr-Ej-oLa"/>
@@ -82,8 +87,8 @@
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
-                    <include reference="cNS-nQ-2ef"/>
                     <include reference="8lM-kl-JHO"/>
+                    <include reference="cNS-nQ-2ef"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="Ohr-Ej-oLa"/>
@@ -99,7 +104,10 @@
                     <include reference="qSY-qV-xkT"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="45" y="250"/>
+            <point key="canvasLocation" x="-93" y="254"/>
         </view>
     </objects>
+    <resources>
+        <image name="stock" width="20" height="20"/>
+    </resources>
 </document>

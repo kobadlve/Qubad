@@ -112,6 +112,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         print(article["url"])
         loadingView.articleTitle = article["title"] as? String
         loadingView.articleURL =  article["url"] as? String
+        loadingView.itemID = article["uuid"] as? String
         loadingView.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         self.presentViewController(loadingView, animated: true, completion: nil)
     }
@@ -261,6 +262,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 let article: [String: AnyObject?] = [
                     "title": json["title"].string,
                     "url": json["url"].string,
+                    "uuid": json["uuid"].string,
                     "stock_count": json["stock_count"].intValue
                 ]
                 self.articles.append(article)
@@ -280,6 +282,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                     let article: [String: AnyObject?] = [
                         "title": json["title"].string,
                         "url": json["url"].string,
+                        "uuid": json["uuid"].string,
                         "stock_count": json["stock_count"].int
                     ]
                     self.stockArticles.append(article)

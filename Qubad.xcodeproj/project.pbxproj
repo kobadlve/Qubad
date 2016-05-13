@@ -25,6 +25,9 @@
 		CF583B441CD0FD9B00913453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF583B421CD0FD9B00913453 /* LaunchScreen.storyboard */; };
 		CF731B3A1CDEC51B00702F0A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF255FB11CD762BD0092927C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF731B3D1CDEC52000702F0A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF255FAF1CD762B60092927C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF9B03E11CE58CEB0042BF2D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B03E01CE58CEB0042BF2D /* MainTabBarController.swift */; };
+		CF9B03E41CE592F30042BF2D /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B03E21CE592F30042BF2D /* ArticlesViewController.swift */; };
+		CF9B03E51CE592F30042BF2D /* ArticlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF9B03E31CE592F30042BF2D /* ArticlesViewController.xib */; };
 		CF9DC77A1CD3B94A001D8051 /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9DC7791CD3B94A001D8051 /* SSKeychain.framework */; };
 		CFB0BD4C1CE0AB5B00897E5E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB0BD4B1CE0AB5B00897E5E /* SettingsView.swift */; };
 		CFB0BD4E1CE0AB6C00897E5E /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB0BD4D1CE0AB6C00897E5E /* SettingsView.xib */; };
@@ -65,6 +68,9 @@
 		CF583B401CD0FD9B00913453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF583B431CD0FD9B00913453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF583B451CD0FD9B00913453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9B03E01CE58CEB0042BF2D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CF9B03E21CE592F30042BF2D /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticlesViewController.swift; path = ../ArticlesViewController.swift; sourceTree = "<group>"; };
+		CF9B03E31CE592F30042BF2D /* ArticlesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArticlesViewController.xib; path = ../ArticlesViewController.xib; sourceTree = "<group>"; };
 		CF9DC7791CD3B94A001D8051 /* SSKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSKeychain.framework; path = Carthage/Build/iOS/SSKeychain.framework; sourceTree = "<group>"; };
 		CFB0BD4B1CE0AB5B00897E5E /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CFB0BD4D1CE0AB6C00897E5E /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
@@ -120,12 +126,15 @@
 				CF583B391CD0FD9B00913453 /* AppDelegate.swift */,
 				CF583B3B1CD0FD9B00913453 /* LoginViewController.swift */,
 				CF5104061CE01D09004359A8 /* ProfileViewController.swift */,
+				CF9B03E01CE58CEB0042BF2D /* MainTabBarController.swift */,
 				CF51040A1CE06C8D004359A8 /* WebViewController.swift */,
+				CF9B03E21CE592F30042BF2D /* ArticlesViewController.swift */,
 				CFB0BD4B1CE0AB5B00897E5E /* SettingsView.swift */,
 				CF255FB31CD77B420092927C /* UserInfo.swift */,
 				CFB0BD4D1CE0AB6C00897E5E /* SettingsView.xib */,
 				CF5104071CE01D09004359A8 /* ProfileViewController.xib */,
 				CF51040B1CE06C8D004359A8 /* WebViewController.xib */,
+				CF9B03E31CE592F30042BF2D /* ArticlesViewController.xib */,
 				CF583B3D1CD0FD9B00913453 /* Main.storyboard */,
 				CF583B401CD0FD9B00913453 /* Assets.xcassets */,
 				CF583B421CD0FD9B00913453 /* LaunchScreen.storyboard */,
@@ -201,6 +210,7 @@
 				CFB0BD4E1CE0AB6C00897E5E /* SettingsView.xib in Resources */,
 				CF5104091CE01D09004359A8 /* ProfileViewController.xib in Resources */,
 				CF583B3F1CD0FD9B00913453 /* Main.storyboard in Resources */,
+				CF9B03E51CE592F30042BF2D /* ArticlesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +261,9 @@
 				CF51040C1CE06C8D004359A8 /* WebViewController.swift in Sources */,
 				CF5104081CE01D09004359A8 /* ProfileViewController.swift in Sources */,
 				CF583B3C1CD0FD9B00913453 /* LoginViewController.swift in Sources */,
+				CF9B03E11CE58CEB0042BF2D /* MainTabBarController.swift in Sources */,
 				CFB0BD4C1CE0AB5B00897E5E /* SettingsView.swift in Sources */,
+				CF9B03E41CE592F30042BF2D /* ArticlesViewController.swift in Sources */,
 				CF255FB41CD77B420092927C /* UserInfo.swift in Sources */,
 				CF583B3A1CD0FD9B00913453 /* AppDelegate.swift in Sources */,
 			);
