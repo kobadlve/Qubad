@@ -35,6 +35,10 @@ class ArticlesViewController: UIViewController, UISearchBarDelegate, UITableView
         searchBar.resignFirstResponder()
     }
     
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
     // MARK: - TableView Delegate, DataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
